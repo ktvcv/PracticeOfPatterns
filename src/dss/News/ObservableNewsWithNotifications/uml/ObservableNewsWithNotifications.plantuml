@@ -1,0 +1,61 @@
+@startuml
+
+
+        class dss.News.ObservableNewsWithNotifications.EmailNotificator {
+            ~ email : String
+            + EmailNotificator()
+            + alarm()
+            + getNotificationSource()
+            + setNotificationSource()
+        }
+
+
+        class dss.News.ObservableNewsWithNotifications.InfoOperator {
+            {static} + main()
+            NationalNews nationalNews
+            SportNews sportNews
+
+        }
+
+
+        class dss.News.ObservableNewsWithNotifications.MobileNotificator {
+            ~ mobilePhone : String
+            + MobileNotificator()
+            + alarm()
+            + getNotificationSource()
+            + setNotificationSource()
+        }
+
+
+        interface dss.News.ObservableNewsWithNotifications.Notificator {
+            {abstract} + alarm()
+            {abstract} + getNotificationSource()
+            {abstract} + setNotificationSource()
+        }
+
+
+
+        class dss.News.ObservableNewsWithNotifications.SubscriberWithNotification {
+            - news : List<String>
+            - notificator : List<Notificator>
+            - uniqueNickName : String
+            + Subscriber()
+            + getNews()
+            + getNotificator()
+            + getUniqueNickName()
+            + setNotificator()
+            + setUniqueNickName()
+            + toString()
+            + update()
+        }
+  
+
+  dss.News.ObservableNewsWithNotifications.EmailNotificator .up.|> dss.News.ObservableNewsWithNotifications.Notificator
+  dss.News.ObservableNewsWithNotifications.MobileNotificator .up.|> dss.News.ObservableNewsWithNotifications.Notificator
+  dss.News.ObservableNews.NationalNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.SportNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNewsWithNotifications.SubscriberWithNotification .up.|> dss.News.ObservableNews.Subscriber
+  dss.News.ObservableNewsWithNotifications.Notificator --* dss.News.ObservableNewsWithNotifications.SubscriberWithNotification
+  dss.News.ObservableNews.NewsSubject o--> dss.News.ObservableNews.Subscriber
+
+@enduml

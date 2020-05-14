@@ -1,0 +1,54 @@
+@startuml
+
+title __AUCTION's Class Diagram__\n
+
+      namespace Auction {
+        class dss.Houses.Auction.BuildingPlan {
+            - dueDateImMonths : int
+            - isApproved : boolean
+            - totalPrice : float
+            + BuildingPlan()
+            + getDueDateImMonths()
+            + getTotalPrice()
+            + isApproved()
+            + setApproved()
+            + setDueDateImMonths()
+            + setTotalPrice()
+            + toString()
+        }
+      }
+
+      namespace Auction {
+        class dss.Houses.Auction.CityMallDecMaker {
+            + makeDecision()
+        }
+      }
+
+
+      namespace Auction {
+        interface dss.Houses.Auction.IDecisionMaker {
+            {abstract} + makeDecision()
+        }
+      }
+
+
+      namespace Auction {
+        class dss.Houses.Auction.Main {
+            {static} + main()
+        }
+      }
+
+
+      namespace Auction {
+        class dss.Houses.Auction.SecurityDecMaker {
+            + makeDecision()
+        }
+      }
+
+  
+
+  dss.Houses.Auction.BuildingPlan o-- dss.Houses.Auction.IDecisionMaker : decisionMaker
+  dss.Houses.Auction.CityMallDecMaker .up.|> dss.Houses.Auction.IDecisionMaker
+  dss.Houses.Auction.SecurityDecMaker .up.|> dss.Houses.Auction.IDecisionMaker
+
+@enduml

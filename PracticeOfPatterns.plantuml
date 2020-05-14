@@ -1,0 +1,269 @@
+@startuml
+
+title __PRACTICEOFPATTERNS's Class Diagram__\n
+
+  namespace dss {
+    namespace Houses.Auction {
+      class dss.Houses.Auction.BuildingPlan {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.Auction {
+      class dss.Houses.Auction.CityMallDecMaker {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.Auction {
+      interface dss.Houses.Auction.IDecisionMaker {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.Auction {
+      class dss.Houses.Auction.Main {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.Auction {
+      class dss.Houses.Auction.SecurityDecMaker {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      class dss.Houses.House.BudgetHouse {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      abstract class dss.Houses.House.House {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      class dss.Houses.House.HouseFactory {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      enum HouseType {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      class dss.Houses.House.LuxuryHouse {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      class dss.Houses.House.Main {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      class dss.Houses.House.MinimalisticHouse {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    class dss.Main {
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      class dss.News.ObservableNews.InfoOperator {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      class dss.News.ObservableNews.NationalNews {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      abstract class dss.News.ObservableNews.NewsSubject {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      class dss.News.ObservableNews.SportNews {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      class dss.News.ObservableNews.Subscriber {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        class dss.News.ObservableNewsWithNotifications.EmailNotificator {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        class dss.News.ObservableNewsWithNotifications.InfoOperator {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        class dss.News.ObservableNewsWithNotifications.MobileNotificator {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        class dss.News.ObservableNewsWithNotifications.NationalNews {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        abstract class dss.News.ObservableNewsWithNotifications.NewsSubject {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        interface dss.News.ObservableNewsWithNotifications.Notificator {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        class dss.News.ObservableNewsWithNotifications.SportNews {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace News.ObservableNews {
+      namespace ithNotifications {
+        class dss.News.ObservableNewsWithNotifications.Subscriber {
+        }
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace SoftWareCompany.MessageCompressor {
+      class dss.SoftWareCompany.MessageCompressor.Message {
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace SoftWareCompany.MessageCompressor {
+      interface dss.SoftWareCompany.MessageCompressor.TextSource {
+      }
+    }
+  }
+  
+
+  dss.Houses.Auction.BuildingPlan o-- dss.Houses.Auction.IDecisionMaker : decisionMaker
+  dss.Houses.Auction.CityMallDecMaker .up.|> dss.Houses.Auction.IDecisionMaker
+  dss.Houses.Auction.SecurityDecMaker .up.|> dss.Houses.Auction.IDecisionMaker
+  dss.Houses.House.BudgetHouse -up-|> dss.Houses.House.House
+  dss.Houses.House.LuxuryHouse -up-|> dss.Houses.House.House
+  dss.Houses.House.MinimalisticHouse -up-|> dss.Houses.House.House
+  dss.News.ObservableNews.NationalNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.NewsSubject -up-|> java.util.Observable
+  dss.News.ObservableNews.SportNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.Subscriber .up.|> java.util.Observer
+  dss.News.ObservableNewsWithNotifications.EmailNotificator .up.|> dss.News.ObservableNewsWithNotifications.Notificator
+  dss.News.ObservableNewsWithNotifications.MobileNotificator .up.|> dss.News.ObservableNewsWithNotifications.Notificator
+  dss.News.ObservableNewsWithNotifications.NationalNews -up-|> dss.News.ObservableNewsWithNotifications.NewsSubject
+  dss.News.ObservableNewsWithNotifications.NewsSubject -up-|> java.util.Observable
+  dss.News.ObservableNewsWithNotifications.SportNews -up-|> dss.News.ObservableNewsWithNotifications.NewsSubject
+  dss.News.ObservableNewsWithNotifications.Subscriber .up.|> java.util.Observer
+  dss.SoftWareCompany.MessageCompressor.Message .up.|> dss.SoftWareCompany.MessageCompressor.TextSource
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

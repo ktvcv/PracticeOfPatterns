@@ -1,0 +1,49 @@
+@startuml
+
+title __OBSERVABLENEWS's Class Diagram__\n
+
+      class dss.News.ObservableNews.InfoOperator {
+          {static} + main()
+      }
+
+
+      class dss.News.ObservableNews.MediaNews {
+          + MediaNews()
+          + addObserver()
+          + deleteObserver()
+      }
+
+      abstract class dss.News.ObservableNews.NewsSubject {
+          ~ news : List<String>
+          + NewsSubject()
+          + addNews()
+          + addObserver()
+          + deleteObserver()
+      }
+
+
+      class dss.News.ObservableNews.SportNews {
+          + SportNews()
+          + addObserver()
+          + deleteObserver()
+      }
+
+
+      class dss.News.ObservableNews.Subscriber {
+          - news : List<String>
+          - uniqueNickName : String
+          + Subscriber()
+          + getNews()
+          + getUniqueNickName()
+          + setUniqueNickName()
+          + toString()
+          + update()
+      }
+
+
+  dss.News.ObservableNews.MediaNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.NewsSubject -up-|> java.util.Observable
+  dss.News.ObservableNews.SportNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.Subscriber .up.|> java.util.Observer
+
+@enduml

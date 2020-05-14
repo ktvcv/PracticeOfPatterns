@@ -1,0 +1,14 @@
+@startuml
+User -> InfoOperator: Subscribe for types of news
+InfoOperator --> User: request for nickname and types of news
+User -> InfoOperator : Inform nickname, choose sport chanel
+InfoOperator -> SportNewsChanel: request for register new observer
+InfoOperator -> NationalNewsChanel: request for register new observer
+
+SportNewsChanel -> SportNewsChanel : register new observer
+NationalNewsChanel -> NationalNewsChanel : register new observer
+
+
+
+
+@enduml

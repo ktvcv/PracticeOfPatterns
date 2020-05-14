@@ -1,0 +1,48 @@
+@startuml
+
+title __HOUSE's Class Diagram__\n
+
+        class dss.Houses.House.BudgetHouse {
+            + getMaterials()
+            + setMaterials()
+        }
+
+
+        abstract class dss.Houses.House.House {
+            ~ materials : List<String>
+            + getMaterials()
+            + setMaterials()
+        }
+
+
+        class dss.Houses.House.HouseFactory {
+            + createHouse(HouseType type)
+        }
+
+
+        enum HouseType {
+          BUDGET
+          LUXURY
+          MINIMALISTIC
+        }
+
+        class dss.Houses.House.LuxuryHouse {
+            + getMaterials()
+            + setMaterials()
+        }
+
+
+        class dss.Houses.House.MinimalisticHouse {
+            + getMaterials()
+            + setMaterials()
+        }
+
+  dss.Houses.House.BudgetHouse -up-|> dss.Houses.House.House
+  dss.Houses.House.LuxuryHouse -up-|> dss.Houses.House.House
+  dss.Houses.House.MinimalisticHouse -up-|> dss.Houses.House.House
+  dss.Houses.House.HouseFactory .up.> dss.Houses.House.BudgetHouse
+  dss.Houses.House.HouseFactory .up.> dss.Houses.House.LuxuryHouse
+  dss.Houses.House.HouseFactory .up.> dss.Houses.House.MinimalisticHouse
+
+
+@enduml
