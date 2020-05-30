@@ -28,7 +28,7 @@
 
 
         interface dss.News.ObservableNewsWithNotifications.Notificator {
-            {abstract} + alarm()
+            {abstract} + alarm(SubscriberWithNotification subscriber)
             {abstract} + getNotificationSource()
             {abstract} + setNotificationSource()
         }
@@ -52,8 +52,8 @@
 
   dss.News.ObservableNewsWithNotifications.EmailNotificator .up.|> dss.News.ObservableNewsWithNotifications.Notificator
   dss.News.ObservableNewsWithNotifications.MobileNotificator .up.|> dss.News.ObservableNewsWithNotifications.Notificator
-  dss.News.ObservableNews.NationalNews -up-|> dss.News.ObservableNews.NewsSubject
-  dss.News.ObservableNews.SportNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.NationalNewsChanel -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.SportNewsChanel -up-|> dss.News.ObservableNews.NewsSubject
   dss.News.ObservableNewsWithNotifications.SubscriberWithNotification .up.|> dss.News.ObservableNews.Subscriber
   dss.News.ObservableNewsWithNotifications.Notificator --* dss.News.ObservableNewsWithNotifications.SubscriberWithNotification
   dss.News.ObservableNews.NewsSubject o--> dss.News.ObservableNews.Subscriber

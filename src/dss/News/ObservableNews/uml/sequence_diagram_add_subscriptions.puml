@@ -1,11 +1,17 @@
 @startuml
-User -> InfoOperator: Subscribe for types of news
-InfoOperator --> User: request for nickname and types of news
-User -> InfoOperator : Inform nickname, choose sport chanel
-InfoOperator -> SportNewsChanel: request for register new observer
-InfoOperator -> NationalNewsChanel: request for register new observer
+autonumber
 
-SportNewsChanel -> SportNewsChanel : register new observer
-NationalNewsChanel -> NationalNewsChanel : register new observer
+Subscriber -> InfoOperator: request for SportNewsChanel subscription
+InfoOperator -> SportNewsChanel: request for register new observer
+SportNewsChanel -> SportNewsChanel: addObserver(Subscriber)
+
+Subscriber -> InfoOperator: request for NationalNewsChanel subscription
+InfoOperator -> NationalNewsChanel: request for register new observer
+NationalNewsChanel -> NationalNewsChanel: addObserver(Subscriber)
+
+InfoOperator -> SportNewsChanel : creating News
+NationalNewsChanel -> NationalNewsChanel : addNews(News)
+NationalNewsChanel -> NationalNewsChanel: notifyObservers()
+Subscriber -> Subscriber: updating list of news, notify Subscriber
 
 @enduml

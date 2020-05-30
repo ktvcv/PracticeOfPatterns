@@ -3,73 +3,70 @@
 title __HOUSE's Class Diagram__\n
 
   namespace dss {
-    namespace Houses {
-      namespace House {
-        class dss.Houses.House.BudgetHouse {
-            + getMaterials()
-            + setMaterials()
-        }
+    namespace Houses.House {
+      class dss.Houses.House.BudgetHouse {
+          + getMaterials()
+          + setMaterials()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace House {
-        abstract class dss.Houses.House.House {
-            ~ materials : List<String>
-            + getMaterials()
-            + setMaterials()
-        }
+    namespace Houses.House {
+      abstract class dss.Houses.House.House {
+          ~ materials : List<String>
+          + getMaterials()
+          + setMaterials()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace House {
-        class dss.Houses.House.HouseFactory {
-            + createHouse()
-        }
+    namespace Houses.House {
+      class dss.Houses.House.HouseFactory {
+          + createHouse()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace House {
-        enum HouseType {
-          BUDGET
-          LUXURY
-          MINIMALISTIC
-        }
+    namespace Houses.House {
+      enum HouseType {
+        BUDGET
+        LUXURY
+        MINIMALISTIC
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace House {
-        class dss.Houses.House.LuxuryHouse {
-            + getMaterials()
-            + setMaterials()
-        }
+    namespace Houses.House {
+      class dss.Houses.House.LuxuryHouse {
+          + getMaterials()
+          + setMaterials()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace House {
-        class dss.Houses.House.MinimalisticHouse {
-            + getMaterials()
-            + setMaterials()
-        }
+    namespace Houses.House {
+      class dss.Houses.House.Main {
+          {static} + main()
+      }
+    }
+  }
+  
+
+  namespace dss {
+    namespace Houses.House {
+      class dss.Houses.House.MinimalisticHouse {
+          + getMaterials()
+          + setMaterials()
       }
     }
   }

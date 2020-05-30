@@ -2,8 +2,8 @@ package dss.News.ObservableNews;
 
 import java.util.Observer;
 
-public class NationalNews extends NewsSubject {
-    public NationalNews() {
+public class NationalNewsChanel extends NewsSubject {
+    public NationalNewsChanel() {
         super();
     }
 

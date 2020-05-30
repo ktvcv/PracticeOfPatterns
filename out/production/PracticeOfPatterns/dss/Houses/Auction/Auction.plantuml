@@ -3,65 +3,55 @@
 title __AUCTION's Class Diagram__\n
 
   namespace dss {
-    namespace Houses {
-      namespace Auction {
-        class dss.Houses.Auction.BuildingPlan {
-            - dueDateImMonths : int
-            - isApproved : boolean
-            - totalPrice : float
-            + BuildingPlan()
-            + getDueDateImMonths()
-            + getTotalPrice()
-            + isApproved()
-            + setApproved()
-            + setDueDateImMonths()
-            + setTotalPrice()
-            + toString()
-        }
+    namespace Houses.Auction {
+      class dss.Houses.Auction.BuildingPlan {
+          - dueDateImMonths : int
+          - isApproved : boolean
+          - totalPrice : float
+          + BuildingPlan()
+          + getDueDateImMonths()
+          + getTotalPrice()
+          + isApproved()
+          + setApproved()
+          + setDueDateImMonths()
+          + setTotalPrice()
+          + toString()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace Auction {
-        class dss.Houses.Auction.CityMallDecMaker {
-            + makeDecision()
-        }
+    namespace Houses.Auction {
+      class dss.Houses.Auction.CityMallDecMaker {
+          + makeDecision()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace Auction {
-        interface dss.Houses.Auction.IDecisionMaker {
-            {abstract} + makeDecision()
-        }
+    namespace Houses.Auction {
+      interface dss.Houses.Auction.IDecisionMaker {
+          {abstract} + makeDecision()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace Auction {
-        class dss.Houses.Auction.Main {
-            {static} + main()
-        }
+    namespace Houses.Auction {
+      class dss.Houses.Auction.Main {
+          {static} + main()
       }
     }
   }
   
 
   namespace dss {
-    namespace Houses {
-      namespace Auction {
-        class dss.Houses.Auction.SecurityDecMaker {
-            + makeDecision()
-        }
+    namespace Houses.Auction {
+      class dss.Houses.Auction.SecurityDecMaker {
+          + makeDecision()
       }
     }
   }

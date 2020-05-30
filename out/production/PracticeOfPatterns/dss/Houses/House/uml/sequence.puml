@@ -1,4 +1,5 @@
 @startuml
 Main --> HouseFactory
 HouseFactory --> BudgetHouse
+
 @enduml

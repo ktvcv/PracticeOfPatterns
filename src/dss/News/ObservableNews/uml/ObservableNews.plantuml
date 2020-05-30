@@ -7,7 +7,7 @@ title __OBSERVABLENEWS's Class Diagram__\n
       }
 
 
-      class dss.News.ObservableNews.NationalNews {
+      class dss.News.ObservableNews.NationalNewsChanel {
           + MediaNews()
           + addObserver()
           + deleteObserver()
@@ -22,7 +22,7 @@ title __OBSERVABLENEWS's Class Diagram__\n
       }
 
 
-      class dss.News.ObservableNews.SportNews {
+      class dss.News.ObservableNews.SportNewsChanel {
           + SportNews()
           + addObserver()
           + deleteObserver()
@@ -41,9 +41,9 @@ title __OBSERVABLENEWS's Class Diagram__\n
       }
 
 
-  dss.News.ObservableNews.NationalNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.NationalNewsChanel -up-|> dss.News.ObservableNews.NewsSubject
   dss.News.ObservableNews.NewsSubject -up-|> java.util.Observable
-  dss.News.ObservableNews.SportNews -up-|> dss.News.ObservableNews.NewsSubject
+  dss.News.ObservableNews.SportNewsChanel -up-|> dss.News.ObservableNews.NewsSubject
   dss.News.ObservableNews.Subscriber .up.|> java.util.Observer
   dss.News.ObservableNews.NewsSubject o--> dss.News.ObservableNews.Subscriber
 

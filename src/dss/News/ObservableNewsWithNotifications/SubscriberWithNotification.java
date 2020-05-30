@@ -8,7 +8,7 @@ import java.util.Observable;
 
 public class SubscriberWithNotification extends Subscriber {
 
-    List<Notificator> notificator = new ArrayList<>();
+    private List<Notificator> notificator = new ArrayList<>();
 
     public List<Notificator> getNotificator() {
         return notificator;
@@ -25,6 +25,7 @@ public class SubscriberWithNotification extends Subscriber {
     @Override
     public void update(Observable o, Object arg) {
         super.update(o, arg);
+        notificator.forEach(x -> x.alarm(this));
     }
 
     @Override

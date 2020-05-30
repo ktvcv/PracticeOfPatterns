@@ -16,6 +16,7 @@ public class Subscriber implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         news.add((String)arg);
+        System.out.println("New news: " + arg);
     }
 
     public String getUniqueNickName() {

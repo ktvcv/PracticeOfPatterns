@@ -8,8 +8,8 @@ public class EmailNotificator implements Notificator {
     }
 
     @Override
-    public void alarm() {
-        System.out.println("You have new news notification sent to your email " + this.email);
+    public void alarm(SubscriberWithNotification subscriber) {
+        System.out.println( subscriber.getUniqueNickName() + "has new news notification sent to your email " + this.email);
     }
 
     @Override
