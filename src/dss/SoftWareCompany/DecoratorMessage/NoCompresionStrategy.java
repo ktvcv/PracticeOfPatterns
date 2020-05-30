@@ -1,7 +1,5 @@
 package dss.SoftWareCompany.DecoratorMessage;
 
-import dss.SoftWareCompany.MessageCompressor.ICompressionStrategy;
-
 public class NoCompresionStrategy implements ICompressionStrategy {
 
     @Override

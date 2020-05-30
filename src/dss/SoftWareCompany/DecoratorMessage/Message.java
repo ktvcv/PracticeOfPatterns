@@ -5,6 +5,11 @@ public class Message implements IMessage{
     String receiver;
     String text;
 
+    public Message(String sender, String receiver) {
+        this.sender = sender;
+        this.receiver = receiver;
+    }
+
     public String getSender() {
         return sender;
     }

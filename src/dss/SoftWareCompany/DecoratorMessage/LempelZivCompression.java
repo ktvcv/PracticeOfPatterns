@@ -1,7 +1,5 @@
 package dss.SoftWareCompany.DecoratorMessage;
 
-import dss.SoftWareCompany.MessageCompressor.ICompressionStrategy;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
