@@ -2,7 +2,7 @@ package dss.Houses.House;
 
 import java.util.List;
 
-public class MinimalisticHouse extends House {
+public class MinimalisticMaterials extends MaterialsAbstract {
     @Override
     public void setMaterials() {
         materials.add("Minimalistic kitchen");

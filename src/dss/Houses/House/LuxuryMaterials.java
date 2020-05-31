@@ -2,14 +2,15 @@ package dss.Houses.House;
 
 import java.util.List;
 
-public class BudgetHouse extends House {
+public class LuxuryMaterials extends MaterialsAbstract {
     @Override
     public void setMaterials() {
-        materials.add("Budget kitchen");
-    }
+            materials.add("Luxury kitchen");
+        }
 
     @Override
     public List<String> getMaterials() {
         return null;
     }
 }
+

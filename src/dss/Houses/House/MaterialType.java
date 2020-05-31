@@ -1,6 +1,6 @@
 package dss.Houses.House;
 
-public enum HouseType {
+public enum MaterialType {
     BUDGET,
     LUXURY,
     MINIMALISTIC
