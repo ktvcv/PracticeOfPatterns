@@ -7,17 +7,13 @@ public  class MaterialFactory {
         switch (type) {
             case BUDGET:
                     materialsAbstract = new BudgetMaterialsAbstract();
-                    materialsAbstract.setMaterials();
                 break;
             case MINIMALISTIC:
                     materialsAbstract = new MinimalisticMaterials();
-                    materialsAbstract.setMaterials();
                 break;
             case LUXURY:
                     materialsAbstract = new LuxuryMaterials();
-                    materialsAbstract.setMaterials();
-
-                break;
+                                  break;
         }
         return materialsAbstract;
     }
