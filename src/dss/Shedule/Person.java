@@ -52,12 +52,23 @@ public class Person implements IPerson{
 
     @Override
     public void addProfileCalendar(Profiles profiles) {
-        if((profiles == Profiles.PAS) && (!this.profiles.contains(Profiles.PAS)))
+        if((profiles == Profiles.PAS) &&
+                (!this.profiles.contains(Profiles.PAS)))
         {
             this.profileCalendarList.add(new PASProfile());
+            this.profiles.add(Profiles.PAS);
         }
-        else if(profiles == Profiles.STUDENT) {
-            this.profileCalendarList.add(StudentProfile.getInstance());
+        else if((profiles == Profiles.STUDENT) &&
+                (!this.profiles.contains(Profiles.STUDENT))){
+            this.profileCalendarList.add(new StudentProfile());
+            this.profiles.add(Profiles.STUDENT);
+
+        }
+        else if((profiles == Profiles.PROFESSOR) &&
+                (!this.profiles.contains(Profiles.PROFESSOR))){
+            this.profileCalendarList.add(new ProfessorProfile());
+            this.profiles.add(Profiles.PROFESSOR);
+
         }
     }
 

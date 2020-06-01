@@ -3,13 +3,11 @@ package dss.Shedule;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentProfile implements ProfileCalendar{
-
-    private static StudentProfile instance;
+public class ProfessorProfile implements ProfileCalendar {
     private List<Event> events = new ArrayList<>();
     @Override
     public void addEvent(Event event) {
-        events.add(event);
+        this.events.add(event);
     }
 
     @Override
@@ -21,7 +19,6 @@ public class StudentProfile implements ProfileCalendar{
     public List<Event> getAllEvents() {
         return this.events;
     }
-
 
 
     public void setEvents(List<Event> events) {
