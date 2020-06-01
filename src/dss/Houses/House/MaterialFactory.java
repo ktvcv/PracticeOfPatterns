@@ -1,20 +1,21 @@
 package dss.Houses.House;
 
-public  class MaterialFactory {
-    //factory method for creation a house
-    public MaterialsAbstract createHouse(MaterialType type){
-        MaterialsAbstract materialsAbstract = null;
+import static dss.Houses.House.Main.*;
+
+public class MaterialFactory {
+    public static void createMaterial(MaterialType type, String material){
+
         switch (type) {
             case BUDGET:
-                    materialsAbstract = new BudgetMaterialsAbstract();
+                budgetMaterials.addMaterials(material);
                 break;
             case MINIMALISTIC:
-                    materialsAbstract = new MinimalisticMaterials();
+                minimalisticMaterials.addMaterials(material);
                 break;
             case LUXURY:
-                    materialsAbstract = new LuxuryMaterials();
-                                  break;
+                luxuryMaterials.addMaterials(material);
+                break;
         }
-        return materialsAbstract;
+
     }
 }

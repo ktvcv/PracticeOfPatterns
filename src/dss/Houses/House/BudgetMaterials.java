@@ -1,9 +1,11 @@
 package dss.Houses.House;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MinimalisticMaterials implements MaterialsAbstract {
+public class BudgetMaterials implements MaterialsAbstract {
+
     private List<String> materials = new ArrayList<>();
 
     @Override
@@ -11,11 +13,11 @@ public class MinimalisticMaterials implements MaterialsAbstract {
         materials.add(material);
     }
 
-    public List<String> getMaterials() {
-        return this.materials;
-    }
-
     public void setMaterials(List<String> materials) {
         this.materials = materials;
+    }
+
+    public List<String> getMaterials() {
+        return this.materials;
     }
 }

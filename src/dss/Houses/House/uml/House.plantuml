@@ -2,7 +2,7 @@
 
 title __HOUSE's Class Diagram__\n
 
-        class dss.Houses.House.BudgetMaterialsAbstract {
+        class dss.Houses.House.BudgetMaterials {
             + getMaterials()
             + setMaterials()
         }
@@ -37,10 +37,10 @@ title __HOUSE's Class Diagram__\n
             + setMaterials()
         }
 
-  dss.Houses.House.BudgetMaterialsAbstract -up-|> dss.Houses.House.MaterialsAbstract
+  dss.Houses.House.BudgetMaterials -up-|> dss.Houses.House.MaterialsAbstract
   dss.Houses.House.LuxuryMaterials -up-|> dss.Houses.House.MaterialsAbstract
   dss.Houses.House.MinimalisticMaterials -up-|> dss.Houses.House.MaterialsAbstract
-  dss.Houses.House.MaterialFactory .up.> dss.Houses.House.BudgetMaterialsAbstract
+  dss.Houses.House.MaterialFactory .up.> dss.Houses.House.BudgetMaterials
   dss.Houses.House.MaterialFactory .up.> dss.Houses.House.LuxuryMaterials
   dss.Houses.House.MaterialFactory .up.> dss.Houses.House.MinimalisticMaterials
 

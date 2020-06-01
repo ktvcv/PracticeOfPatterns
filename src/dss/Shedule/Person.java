@@ -7,12 +7,22 @@ public class Person implements IPerson{
     private String name;
     private String surname;
     private List<ProfileCalendar> profileCalendarList = new ArrayList<>();
+    private List<Profiles> profiles;
+
+    public List<Profiles> getProfiles() {
+        return profiles;
+    }
+
+    public void setProfiles(List<Profiles> profiles) {
+        this.profiles = profiles;
+    }
 
     public Person(String name, String surname) {
         this.name = name;
         this.surname = surname;
         profileCalendarList.add(StandardProfile.getInstance());
     }
+
 
     public String getName() {
         return name;
@@ -42,11 +52,14 @@ public class Person implements IPerson{
 
     @Override
     public void addProfileCalendar(Profiles profiles) {
-        if(profiles == Profiles.PAS)
+        if((profiles == Profiles.PAS) && (!this.profiles.contains(Profiles.PAS)))
         {
-
+            this.profileCalendarList.add(new PASProfile());
         }
-        else if(profiles == Profiles.STUDENT)
+        else if(profiles == Profiles.STUDENT) {
             this.profileCalendarList.add(StudentProfile.getInstance());
+        }
     }
+
+
 }

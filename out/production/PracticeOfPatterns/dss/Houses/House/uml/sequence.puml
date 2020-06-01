@@ -1,5 +1,8 @@
 @startuml
-Main --> HouseFactory
-HouseFactory --> BudgetHouse
+Main --> HouseFactory: createFactory()
+HouseFactory --> HouseFactory: createHouse(HouseType)
+HouseFactory --> HouseFactory: created materialsAbstract
+HouseFactory --> House: materialsAbstract.setMaterials()
+
 
 @enduml
