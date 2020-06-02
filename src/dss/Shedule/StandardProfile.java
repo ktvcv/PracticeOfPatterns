@@ -22,6 +22,16 @@ public class StandardProfile implements ProfileCalendar{
         return this.events;
     }
 
+    @Override
+    public Profiles getProfileName() {
+        return Profiles.STANDARD;
+    }
+
+    @Override
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
+
     private StandardProfile() {
         // this code makes lazy initialization
         try {
@@ -38,7 +48,15 @@ public class StandardProfile implements ProfileCalendar{
         return instance;
     }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
+
+    @Override
+    public String toString() {
+        return "StandardProfile{" +
+                "events=" + events +
+                '}';
+    }
+    public void addEvents(List<Event> events)
+    {
+        this.events.addAll(events);
     }
 }

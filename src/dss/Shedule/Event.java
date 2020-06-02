@@ -4,8 +4,19 @@ import java.util.Date;
 
 public class Event {
     private String name;
-    private Date date;
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+    private Date startDate;
+    private Date endDate;
     private String description;
 
     public String getName() {
@@ -16,12 +27,20 @@ public class Event {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public String getDescription() {
@@ -32,9 +51,10 @@ public class Event {
         this.description = description;
     }
 
-    public Event(String name, Date date, String description) {
+    public Event(String name, Date startDate, Date endDate, String description) {
         this.name = name;
-        this.date = date;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.description = description;
     }
 }
