@@ -10,8 +10,8 @@ public class Main {
         String messageText = "New message about prices on Apple stocks";
         Message message = new Message("Forex", "Jonh Doe");
         MessageDecorator encoded = new CompressionDecorator(
-                                         new EncryptionDecorator(
-                                             new DigitalSignatureDecorator(message)),new HuffmanCompression());
+            new EncryptionDecorator(
+                new DigitalSignatureDecorator(message)), new HuffmanCompression());
         encoded.write(messageText);
 
 

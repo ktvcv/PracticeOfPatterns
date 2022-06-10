@@ -5,7 +5,9 @@ public class MobileNotificator implements Notificator {
 
     @Override
     public void alarm(SubscriberWithNotification subscriber) {
-        System.out.println( subscriber.getUniqueNickName() + " has new news notification sent to your phone " + this.mobilePhone);
+        System.out.println( subscriber.getUniqueNickName()
+            + " has new news notification sent to your phone "
+            + this.mobilePhone);
     }
 
     public MobileNotificator(String mobilePhone) {

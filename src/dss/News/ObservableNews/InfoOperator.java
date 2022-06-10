@@ -13,6 +13,7 @@ public class InfoOperator {
     static List<Subscriber> subscriberList = new ArrayList<>();
 
     static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         String choice = "0";
         do {
@@ -40,7 +41,7 @@ public class InfoOperator {
                     }
                     case "2": {
                         Subscriber subscriber = getSubscriber();
-                        if(subscriber == null) {
+                        if (subscriber == null) {
                             System.out.println("No such users");
                             break;
                         }
@@ -69,7 +70,7 @@ public class InfoOperator {
                     }
                     case "3": {
                         Subscriber subscriber = getSubscriber();
-                        if(subscriber == null) {
+                        if (subscriber == null) {
                             System.out.println("No such users");
                             break;
                         }
@@ -122,7 +123,7 @@ public class InfoOperator {
                     }
                     case "5": {
                         Subscriber subscriber = getSubscriber();
-                        if(subscriber == null) {
+                        if (subscriber == null) {
                             System.out.println("No such users");
                             break;
                         }
@@ -141,11 +142,11 @@ public class InfoOperator {
 
     }
 
-    static Subscriber getSubscriber(){
+    static Subscriber getSubscriber() {
         System.out.println("1. Enter your nickname please");
         String nickName1 = scanner.next();
         Subscriber subscriber = subscriberList.stream().filter(x -> x.getUniqueNickName().equals(nickName1)).findFirst().orElse(null);
-        if(subscriber == null) {
+        if (subscriber == null) {
             System.out.println("No such users");
             return null;
         }

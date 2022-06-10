@@ -6,13 +6,16 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.util.Base64;
 
-public class EncryptionDecorator extends MessageDecorator implements IEncryptDecorator{
+public class EncryptionDecorator extends MessageDecorator implements IEncryptDecorator {
     public EncryptionDecorator(IMessage wrappee) {
         super(wrappee);
     }
 
     @Override
-    public void write(String data) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException, UnsupportedEncodingException {
+    public void write(String data) throws NoSuchAlgorithmException,
+        InvalidKeyException, SignatureException,
+        UnsupportedEncodingException
+    {
         super.write(encrypt(data));
     }
 

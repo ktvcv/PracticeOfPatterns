@@ -3,6 +3,7 @@ package dss.News.ObservableNews;
 import java.util.Observer;
 
 public class SportNewsChanel extends NewsSubject {
+
     public SportNewsChanel() {
         super();
     }

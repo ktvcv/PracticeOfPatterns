@@ -40,10 +40,10 @@ public class BuildingPlan {
     @Override
     public String toString() {
         return "BuildingPlan{" +
-                "decisionMaker=" + decisionMaker +
-                ", dueDateImMonths=" + dueDateImMonths +
-                ", totalPrice=" + totalPrice +
-                ", isApproved=" + isApproved +
-                '}';
+            "decisionMaker=" + decisionMaker +
+            ", dueDateImMonths=" + dueDateImMonths +
+            ", totalPrice=" + totalPrice +
+            ", isApproved=" + isApproved +
+            '}';
     }
 }

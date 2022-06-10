@@ -23,9 +23,9 @@ public class LempelZivCompression implements ICompressionStrategy {
     private static List<Integer> compress(String uncompressed) {
         // Build the dictionary.
         int dictSize = 256;
-        Map<String,Integer> dictionary = new HashMap<String,Integer>();
+        Map<String, Integer> dictionary = new HashMap<String, Integer>();
         for (int i = 0; i < 256; i++)
-            dictionary.put("" + (char)i, i);
+            dictionary.put("" + (char) i, i);
 
         String w = "";
         List<Integer> result = new ArrayList<Integer>();
@@ -47,15 +47,17 @@ public class LempelZivCompression implements ICompressionStrategy {
         return result;
     }
 
-    /** Decompress a list of output ks to a string. */
+    /**
+     * Decompress a list of output ks to a string.
+     */
     private static String decompress(List<Integer> compressed) {
         // Build the dictionary.
         int dictSize = 256;
-        Map<Integer,String> dictionary = new HashMap<Integer,String>();
+        Map<Integer, String> dictionary = new HashMap<Integer, String>();
         for (int i = 0; i < 256; i++)
-            dictionary.put(i, "" + (char)i);
+            dictionary.put(i, "" + (char) i);
 
-        String w = "" + (char)(int)compressed.remove(0);
+        String w = "" + (char) (int) compressed.remove(0);
         StringBuffer result = new StringBuffer(w);
         for (int k : compressed) {
             String entry;

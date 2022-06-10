@@ -15,9 +15,9 @@ public class Profile implements ProfileCalendar {
     @Override
     public String toString() {
         return "Profile{" +
-                "events=" + events +
-                ", profile=" + profile +
-                '}';
+            "events=" + events +
+            ", profile=" + profile +
+            '}';
     }
 
     @Override
@@ -40,22 +40,12 @@ public class Profile implements ProfileCalendar {
         return this.profile;
     }
 
-    public List<Event> getEvents() {
-        return events;
-    }
-
     @Override
     public void setEvents(List<Event> events) {
         this.events = events;
     }
 
-
-    public void setProfile(Profiles profile) {
-        this.profile = profile;
-    }
-
-    public void addEvents(List<Event> events)
-    {
+    public void addEvents(List<Event> events) {
         this.events.addAll(events);
     }
 }

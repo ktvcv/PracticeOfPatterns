@@ -1,6 +1,7 @@
 package dss.SoftWareCompany.MessageCompressor;
 
 public class Message implements IMessage {
+
     private String sender;
     private String receiver;
     private String text;

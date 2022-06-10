@@ -1,6 +1,6 @@
 package dss.SoftWareCompany.DecoratorMessage;
 
-public class Message implements IMessage{
+public class Message implements IMessage {
     String sender;
     String receiver;
     String text;

@@ -14,7 +14,7 @@ public abstract class NewsSubject extends Observable {
     }
 
     @Override
-    public synchronized void addObserver(Observer o){
+    public synchronized void addObserver(Observer o) {
         super.addObserver(o);
     }
 
@@ -23,8 +23,7 @@ public abstract class NewsSubject extends Observable {
         super.deleteObserver(o);
     }
 
-    public  void  addNews(String news)
-    {
+    public void addNews(String news) {
         this.news.add(news);
         setChanged();
         notifyObservers(news);
